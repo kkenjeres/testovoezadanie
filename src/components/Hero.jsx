@@ -10,7 +10,7 @@ const Hero = () => {
 
   return (
     <section className=' relative h-screen font-montserrat bg-center bg-cover z-0 overflow-hidden sm:text-sm md:text-base lg:text-lg' style={{ backgroundImage: `url(${bg})` }}>
-      <div className='absolute inset-0 bg-[rgba(19,52,87,.83)] z-0' style={{ backdropFilter: 'blur(20px)' }} />
+      <div className='absolute inset-0 bg-[rgba(19,52,87,.83)] z-0 blur' />
       <Header className='flex-shrink-0 z-10' />
       <Form onClose={() => setFormVisible(false)} visible={isFormVisible} className='z-30' />
       
@@ -21,16 +21,15 @@ const Hero = () => {
             <p className='hidden md:block text-[16px] border-l border-white pl-10 custom-text mb-8 md:mb-16'>
   Когда ваше время и энергия лучше сфокусированы, стремление к новым возможностям становится реальностью, ваш успех зависит от ваших действий
 </p>
-<p className='md:hidden text-[10px] border-l border-white pl-10 custom-text mb-8 md:mb-16'>
+<p className='md:hidden text-[10px] border-l border-white pl-4 md:pl-10 custom-text mb-8 md:mb-16'>
   Ваш успех зависит от ваших действий
 </p>
             <div className='gap-10 w-[50%] md:w-full'>
-  <div className='md:flex gap-10'>
+            <div className='xl:flex gap-10'>
   <button 
     onClick={() => setFormVisible(true)} 
-    className='transform transition-transform duration-300 hover:scale-105 bg-white flex items-center text-black mb-20 w-full md:w-auto'
-    style={{position: 'relative'}}
->
+    className='transform transition-transform duration-300 hover:scale-105 bg-white flex items-center text-black mb-4 md:mb-20 w-auto md:w-auto relative'
+  >
     <span className='px-2 whitespace-nowrap md:px-4 md:hidden text-[10px]'>Записаться</span>
     <span className='hidden md:px-4 md:whitespace-nowrap md:inline'>Записаться на консультацию</span>
     <div 
@@ -43,11 +42,10 @@ const Hero = () => {
     </div>
 </button>
 
-    <button 
+  <button 
     onClick={() => setFormVisible(true)} 
-    className='transform transition-transform duration-300 hover:scale-105 flex items-center border border-white text-white mb-20 w-full md:w-auto' 
-    style={{position: 'relative'}}
->
+    className='transform transition-transform duration-300 hover:scale-105 flex items-center border border-white text-white mb-4 md:mb-20 w-auto md:w-auto relative'
+  >
     <span className='px-2 whitespace-nowrap md:px-4 md:hidden text-[10px]'>Заказать звонок</span>
     <span className='hidden md:px-4 md:whitespace-nowrap md:inline'>Записаться на консультацию</span>
     <div 
@@ -58,16 +56,17 @@ const Hero = () => {
             className='text-[10px] md:text-[26px] transform translate-x-[30%] translate-y-[30%]' 
         />
     </div>
-</button>
-  </div>
+  </button>
+</div>
+
   <div className='flex gap-4 md:gap-10'>
-    <div className='border-l border-white pl-10 w-full'>
-      <p className='text-[25px] sm:text-[30px] md:text-[40px] text-white'>130+</p>
+    <div className='border-l border-white pl-4 md:pl-10 w-full'>
+      <p className='text-[16px] sm:text-[30px] md:text-[40px] text-white'>130+</p>
       <p className='custom-text'>техник для <br/> достижения целей</p>
     </div>
-    <div className='border-l border-white pl-10 w-full'>
-      <p className='text-[25px] sm:text-[30px] md:text-[40px] text-white '>250%</p>
-      <p className='custom-text'>увеличение личной <br/> продуктивности</p>
+    <div className='border-l border-white pl-4 md:pl-10 w-full'>
+      <p className='text-[16px] sm:text-[30px] md:text-[40px] text-white '>250%</p>
+      <p className='custom-text '>увеличение личной <br/> продуктивности</p>
     </div>
   </div>
 </div>
@@ -75,7 +74,7 @@ const Hero = () => {
           </div>
         </div>
         
-        <div className='absolute w-3/5 h-full top-0 right-0 md:static'>
+        <div className='absolute w-3/5 h-full top-0 -right-16 md:static'>
           <img src={mentor} alt="Ментор" className='w-full h-full object-contain object-right' />
         </div>
       </div>

@@ -66,7 +66,7 @@ const Form = ({ onClose, visible }) => {
   }, [name, phoneNumber, isChecked]);
 
   return (
-    <section className={`formContainer m-auto ${visible ? 'visible' : ''} w-full md:w-[30%] flex flex-col`}>
+    <section className={`formContainer m-auto ${visible ? 'visible' : ''} w-full md:w-[50%]  lg:w-[50%] xl:w-[30%] flex flex-col`}>
       <button onClick={handleClose} className='absolute top-4 right-4'>
         <AiOutlineClose className='text-[40px] text-white'/>
       </button>      
@@ -108,10 +108,10 @@ const Form = ({ onClose, visible }) => {
           </div>
           {submitted && errors.checkbox && <p className="text-red-500 text-xs">{errors.checkbox}</p>}
           <div className="mt-4">
-          <button 
+  <button 
     onClick={handleSubmit} 
-    className='transform transition-transform duration-300 hover:scale-105 flex items-center border border-white text-white mb-20 w-full md:w-auto relative'
->
+    className='transform transition-transform duration-300 hover:scale-105 flex items-center border border-white text-white mb-20 w-auto md:w-auto relative'
+  >
     <span className='px-2 whitespace-nowrap md:px-4 md:hidden text-[10px]'>Заказать звонок</span>
     <span className='hidden md:px-4 md:whitespace-nowrap md:inline'>Записаться на консультацию</span>
     <div 
@@ -121,9 +121,9 @@ const Form = ({ onClose, visible }) => {
             className='text-[10px] md:text-[26px] transform translate-x-[30%] translate-y-[30%] transition-transform duration-300 hover:translate-x-[40%] hover:translate-y-[40%]' 
         />
     </div>
-</button>
+  </button>
+</div>
 
-          </div>
         </>
       )}
             </div>
