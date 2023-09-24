@@ -9,12 +9,12 @@ const Hero = () => {
   const [isFormVisible, setFormVisible] = useState(false);
 
   return (
-    <section className=' relative md:h-screen font-montserrat bg-center bg-cover z-0 overflow-hidden sm:text-sm md:text-base lg:text-lg' style={{ backgroundImage: `url(${bg})` }}>
+    <section className=' relative h-screen font-montserrat bg-center bg-cover z-0 overflow-hidden sm:text-sm md:text-base lg:text-lg' style={{ backgroundImage: `url(${bg})` }}>
       <div className='absolute inset-0 bg-[rgba(19,52,87,.83)] z-0 blur' />
       <Header className='flex-shrink-0 z-10' />
       <Form onClose={() => setFormVisible(false)} visible={isFormVisible} className='z-30' />
       
-      <div className='flex w-[90%] md:w-[80%] mx-auto flex-grow z-10 relative items-center md:flex-row'>
+      <div className='flex w-[90%] md:w-[80%] mx-auto h-full md:h-auto flex-grow z-10 relative items-center md:flex-row'>
         <div className='flex flex-col w- md:w-3/5 h-full relative z-10'>
           <div className='flex flex-col w-full justify-center items-start '>
             <h1 className='text-[25px] sm:text-[35px] md:text-[55px] lg:text-[55px] xl:text-[65px] font-[600] font-raleway text-white mb-8 md:mb-20 leading-[25px] md:leading-[60px]'>Создаю условия для вашего успеха</h1>
@@ -74,7 +74,7 @@ const Hero = () => {
           </div>
         </div>
         
-        <div className='absolute w-3/5 h-full top-0 -right-16 md:static'>
+        <div className='absolute md:w-3/5 h-full w-full top-0 -right-16 md:static'>
           <img src={mentor} alt="Ментор" className='w-full h-full object-contain object-right' />
         </div>
       </div>
