@@ -9,7 +9,7 @@ const Hero = () => {
   const [isFormVisible, setFormVisible] = useState(false);
 
   return (
-    <section className=' relative h-full font-montserrat bg-center bg-cover z-0 overflow-hidden sm:text-sm md:text-base lg:text-lg' style={{ backgroundImage: `url(${bg})` }}>
+    <section className=' relative md:h-screen font-montserrat bg-center bg-cover z-0 overflow-hidden sm:text-sm md:text-base lg:text-lg' style={{ backgroundImage: `url(${bg})` }}>
       <div className='absolute inset-0 bg-[rgba(19,52,87,.83)] z-0 blur' />
       <Header className='flex-shrink-0 z-10' />
       <Form onClose={() => setFormVisible(false)} visible={isFormVisible} className='z-30' />
