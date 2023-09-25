@@ -7,18 +7,16 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-<header 
-  className={`
-    flex w-[90%] md:w-[80%]  m-auto justify-between items-center py-8  е
-    absolute xl:h-auto text-white xl:overflow-visible 
-    ${isMenuOpen ? 'h-screen overflow-hidden' : ''} fixed top-0 left-0 right-0 z-20
-  `}
->      
-<a href="/">
-    <h1 className='border-y border-white z-10 cursor-pointer'>ALEX.SHEVTSOV</h1>
-</a>
-
-      
+    <header 
+      className={`
+        flex w-[90%] md:w-[80%]  m-auto justify-between items-center py-8  е
+        absolute xl:h-auto text-white xl:overflow-visible 
+        ${isMenuOpen ? 'h-screen overflow-hidden' : ''} fixed top-0 left-0 right-0 z-20
+      `}
+    >      
+      <a href="/">
+        <h1 className='border-y border-white z-10 cursor-pointer'>ALEX.SHEVTSOV</h1>
+      </a>
       <div className='xl:hidden flex items-center justify-end'>
         <button 
           className='z-10 mr-4'

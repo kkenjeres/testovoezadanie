@@ -71,62 +71,60 @@ const Form = ({ onClose, visible }) => {
         <AiOutlineClose className='text-[40px] text-white'/>
       </button>      
       <div className='w-[85%] m-auto min:h-screen'>
-     {!isFormValid && <h1 className='text-[20px] text-white font-[600] md:text-[50px] leading-[25px] md:leading-[60px]'>Закажите <br/> обратный звонок</h1>}
+        {!isFormValid && <h1 className='text-[20px] text-white font-[600] md:text-[50px] leading-[25px] md:leading-[60px]'>Закажите <br/> обратный звонок</h1>}
 
-      {isFormValid ? (
-        <Confirmation />
-      ) : (
+          {isFormValid ? (
+            <Confirmation />
+          ) : (
         <>
-          <div className="mt-4 ">
-            <label className="block text-white mb-2">Имя:</label>
-            <input
-              type="text"
-              value={name}
-              onChange={handleNameChange}
-              className="w-full p-2 mb-2 border border-gray-300 rounded placeholder-black"
-              placeholder='Имя'
+        <div className="mt-4 ">
+          <label className="block text-white mb-2">Имя:</label>
+          <input
+            type="text"
+            value={name}
+            onChange={handleNameChange}
+            className="w-full p-2 mb-2 border border-gray-300 rounded placeholder-black"
+            placeholder='Имя'
+          />
+          {submitted && errors.name && <p className="text-red-500 text-xs">{errors.name}</p>}
+        </div>
+
+        <div className="mt-4">
+          <label className="block text-white mb-2">Номер телефона:</label>
+          <div className="flex border border-gray-300 rounded">
+            <InputMask
+              mask="+7 (999) 999-9999"
+              value={phoneNumber}
+              onChange={(e) => setPhoneNumber(e.target.value)}
+              className="flex-1 p-2 rounded placeholder-black"
+              placeholder='Телефон'
             />
-            {submitted && errors.name && <p className="text-red-500 text-xs">{errors.name}</p>}
           </div>
-
-          <div className="mt-4">
-            <label className="block text-white mb-2">Номер телефона:</label>
-            <div className="flex border border-gray-300 rounded">
-              <InputMask
-                mask="+7 (999) 999-9999"
-                value={phoneNumber}
-                onChange={(e) => setPhoneNumber(e.target.value)}
-                className="flex-1 p-2 rounded placeholder-black"
-                placeholder='Телефон'
-              />
-            </div>
-            {submitted && errors.phoneNumber && <p className="text-red-500 text-xs">{errors.phoneNumber}</p>}
-          </div>
-          <div className="mt-4 flex items-center mx-auto">
-            <input type="checkbox" onChange={() => setIsChecked(!isChecked)} checked={isChecked} />
-            <p className='custom-text ml-2'>Согласен на сохранение и обработку персональных данных</p>
-          </div>
+          {submitted && errors.phoneNumber && <p className="text-red-500 text-xs">{errors.phoneNumber}</p>}
+        </div>
+        <div className="mt-4 flex items-center mx-auto">
+          <input type="checkbox" onChange={() => setIsChecked(!isChecked)} checked={isChecked} />
+          <p className='custom-text ml-2'>Согласен на сохранение и обработку персональных данных</p>
+        </div>
           {submitted && errors.checkbox && <p className="text-red-500 text-xs">{errors.checkbox}</p>}
-          <div className="mt-4">
-  <button 
-    onClick={handleSubmit} 
-    className='transform transition-transform duration-300 hover:scale-105 flex items-center border border-white text-white mb-20 w-auto md:w-auto relative'
-  >
-    <span className='px-2 whitespace-nowrap md:px-4 md:hidden text-[10px]'>Заказать звонок</span>
-    <span className='hidden md:px-4 md:whitespace-nowrap md:inline'>Записаться на консультацию</span>
-    <div 
-        className='border-l border-white p-2 md:p-4 flex items-center justify-center relative'
-    >
-        <BsArrowDownRight 
-            className='text-[10px] md:text-[26px] transform translate-x-[30%] translate-y-[30%] transition-transform duration-300 hover:translate-x-[40%] hover:translate-y-[40%]' 
-        />
-    </div>
-  </button>
-</div>
+        <div className="mt-4">
+          <button 
+            onClick={handleSubmit} 
+            className='transform transition-transform duration-300 hover:scale-105 flex items-center border border-white text-white mb-20 w-auto md:w-auto relative'
+          >
+          <span className='px-2 whitespace-nowrap md:px-4 md:hidden text-[10px]'>Заказать звонок</span>
+          <span className='hidden md:px-4 md:whitespace-nowrap md:inline'>Записаться на консультацию</span>
+          <div className='border-l border-white p-2 md:p-4 flex items-center justify-center relative'>
+              <BsArrowDownRight 
+                  className='text-[10px] md:text-[26px] transform translate-x-[30%] translate-y-[30%] transition-transform duration-300 hover:translate-x-[40%] hover:translate-y-[40%]' 
+              />
+          </div>
+          </button>
+        </div>
 
-        </>
-      )}
-            </div>
+              </>
+            )}
+      </div>
     </section>
   );
 };
