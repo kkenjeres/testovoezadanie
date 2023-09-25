@@ -66,7 +66,7 @@ const Form = ({ onClose, visible }) => {
   }, [name, phoneNumber, isChecked]);
 
   return (
-    <section className={`formContainer m-auto ${visible ? 'visible' : ''} w-full md:w-[50%]  lg:w-[50%] xl:w-[30%] flex flex-col`}>
+    <section className={`formContainer m-auto ${visible ? 'visible' : ''} w-full md:w-[50%]  lg:w-[50%] xl:w-[30%] flex flex-col z-100`} >
       <button onClick={handleClose} className='absolute top-4 right-4'>
         <AiOutlineClose className='text-[40px] text-white'/>
       </button>      

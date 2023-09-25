@@ -9,11 +9,15 @@ const Header = () => {
   return (
 <header 
   className={`
-    flex w-[90%] md:w-[80%] m-auto justify-between items-center py-8  е
+    flex w-[90%] md:w-[80%]  m-auto justify-between items-center py-8  е
     absolute xl:h-auto text-white xl:overflow-visible 
-    ${isMenuOpen ? 'h-screen overflow-hidden' : ''} fixed top-0 left-0 right-0 z-10
+    ${isMenuOpen ? 'h-screen overflow-hidden' : ''} fixed top-0 left-0 right-0 z-20
   `}
->      <h1 className='border-y border-white z-10'>ALEX.SHEVTSOV</h1>
+>      
+<a href="/">
+    <h1 className='border-y border-white z-10 cursor-pointer'>ALEX.SHEVTSOV</h1>
+</a>
+
       
       <div className='xl:hidden flex items-center justify-end'>
         <button 
@@ -41,7 +45,7 @@ const Header = () => {
       
       <div className='hidden xl:flex items-center justify-end'>
         <img src={phone} alt='phone' className='mr-4 text-[30px] ' />
-        <span>8328392932</span>
+        <span>83423453457</span>
       </div>
     </header>
   );
